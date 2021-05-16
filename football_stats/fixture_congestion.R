@@ -48,14 +48,23 @@ ggplot(full.data, aes(x = Date, y = "Matches")) +
   geom_line() +
   scale_color_manual(values = c("Green", "Red", "Orange", "Black")) +
   # Adding xtiks for each week
-  scale_x_date(date_breaks = "weeks", date_labels = "%d %b %y") +
+  scale_x_date(name = NULL, date_breaks = "weeks", date_labels = "%d %b %y") +
+  # Formatting Y-axis
+  scale_y_discrete(name = NULL) +
   # Labelling each point with the Opponent name rotated by 90 degrees
   geom_text(aes(label = Opponent), angle = 90, hjust = 1, size = 3.5) +
-  ggtitle("Fixture Congestion (2020-21) - Manchester United") +
+  labs(
+    title = "Fixture Congestion (2020-21) - Manchester United",
+    caption = "Source: https://www.transfermarkt.co.in/\nPrepared by: @ppai22"
+  ) +
+  theme_light() +
   theme(
+    panel.grid = element_blank(),
     legend.position = "top",
+    legend.justification = "left",
     legend.title = element_blank(),
-    axis.text.x = element_text(angle = 90, vjust = 0.5)
+    axis.text.x = element_text(angle = 90, vjust = 0.5),
+    plot.caption = element_text(face = "italic", hjust = 0)
     ) +
-  ggsave("fixture_congestion.png", width = 15, height = 5)
+  ggsave("fixture_congestion.png", width = 15, height = 4)
 
