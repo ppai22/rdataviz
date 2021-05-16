@@ -27,10 +27,24 @@ ggplot(data %>% filter(data$minutes != 0), aes(x = ages, y = minutes)) +
   geom_text_repel(aes(label = names)) +
   # Adding second axis for perecntage of teams minutes played
   scale_y_continuous(name = "Minutes", sec.axis = sec_axis(~./(total.matches * 90) * 100, name = "Percentage of Total minutes")) +
-  scale_x_continuous(n.breaks = 25) +
+  scale_x_continuous(name = "Age", n.breaks = 25) +
   labs(
-    title = "Comparison of age and minutes played (2020-21) - Manchester United",
-    caption = "Data from https://www.transfermarkt.co.in/"
+    title = "Manchester United",
+    subtitle = "Comparison of Ages and Minutes Played for 2020-21",
+    caption = "Data from https://www.transfermarkt.co.in/\nPrepared by @ppai22"
     ) +
   theme_light() +
-  ggsave("age_v_minutes.png", width = 15, height = 10)
+  theme(
+    plot.background = element_rect(fill = "#800000"),
+    panel.background = element_rect(fill = "#800000"),
+    panel.border = element_rect(colour = "black"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(linetype = "dashed", colour = "black"),
+    axis.line = element_line(colour = "black"),
+    axis.text = element_text(color = "black"),
+    axis.ticks = element_line(colour = "black"),
+    plot.title = element_text(colour = "black", hjust = 0.5, size = 20),
+    plot.subtitle = element_text(colour = "black", hjust = 0.5, size = 15),
+    plot.caption = element_text(face = "italic")
+  )
+ggsave("age_v_minutes.png", width = 15, height = 10)
