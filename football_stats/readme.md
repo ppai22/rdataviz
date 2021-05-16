@@ -9,4 +9,4 @@
 
 ### [Fixture Congestion](https://github.com/ppai22/rdataviz/blob/main/football_stats/fixture_congestion.R)
 
-![fixture_congestion](https://user-images.githubusercontent.com/12592201/118300089-30018c00-b4ff-11eb-9953-45d446898714.png)
+![fixture_congestion](https://github.com/ppai22/rdataviz/blob/main/football_stats/fixture_congestion.png)
