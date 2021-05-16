@@ -4,7 +4,7 @@
 
 ### [Player Age v Minutes played](https://github.com/ppai22/rdataviz/blob/main/football_stats/age_v_minutes.R)
 
-![age_v_minutes](https://user-images.githubusercontent.com/12592201/118301850-2a0caa80-b501-11eb-8777-f90726dda37d.png)
+![age_v_minutes](https://github.com/ppai22/rdataviz/blob/main/football_stats/age_v_minutes.png)
 
 
 ### [Fixture Congestion](https://github.com/ppai22/rdataviz/blob/main/football_stats/fixture_congestion.R)
